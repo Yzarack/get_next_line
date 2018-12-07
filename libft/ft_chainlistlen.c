@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_chainlistlen.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthierce <jthierce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/04 17:17:23 by marvin            #+#    #+#             */
-/*   Updated: 2018/12/06 15:46:23 by jthierce         ###   ########.fr       */
+/*   Created: 2018/11/29 01:31:49 by marvin            #+#    #+#             */
+/*   Updated: 2018/11/29 15:38:44 by jthierce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GET_NEXT_LINE_H
-# define FT_GET_NEXT_LINE_H
-# include "libft.h"
-# define BUFF_SIZE 32
+#include "libft.h"
+#include <string.h>
 
-int		get_next_line(const int fd, char **line);
+size_t	ft_chainlistlen(t_list *lst)
+{
+	t_list	*debut;
+	size_t	len;
 
-#endif
+	len = 1;
+	debut = lst;
+	if (lst == NULL)
+		return (0);
+	lst = lst->next;
+	while (lst != NULL && lst != debut)
+	{
+		lst = lst->next;
+		len++;
+	}
+	return (len);
+}

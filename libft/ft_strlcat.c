@@ -1,20 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jthierce <jthierce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/04 17:17:23 by marvin            #+#    #+#             */
-/*   Updated: 2018/12/06 15:46:23 by jthierce         ###   ########.fr       */
+/*   Created: 2018/11/13 14:10:06 by jthierce          #+#    #+#             */
+/*   Updated: 2018/11/30 19:48:31 by jthierce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GET_NEXT_LINE_H
-# define FT_GET_NEXT_LINE_H
-# include "libft.h"
-# define BUFF_SIZE 32
+#include "libft.h"
 
-int		get_next_line(const int fd, char **line);
+size_t	ft_strlcat(char *dest, const char *src, size_t n)
+{
+	unsigned int i;
+	unsigned int buff;
+	unsigned int srclen;
 
-#endif
+	buff = ft_strlen(dest);
+	i = 0;
+	srclen = 0;
+	while (src[i] && buff + i + 1 < n)
+	{
+		dest[buff + i] = src[i];
+		i++;
+	}
+	dest[buff + i] = '\0';
+	srclen = ft_strlen(src);
+	if (n < buff)
+		return (srclen + n);
+	return (buff + srclen);
+}
