@@ -6,7 +6,7 @@
 /*   By: jthierce <jthierce@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/16 20:29:48 by jthierce          #+#    #+#             */
-/*   Updated: 2018/12/06 16:10:38 by jthierce         ###   ########.fr       */
+/*   Updated: 2018/12/11 13:39:07 by jthierce         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 typedef struct	s_list
 {
 	void			*content;
-	size_t			content_size;
+	ssize_t			content_size;
 	struct s_list	*next;
 }				t_list;
 int				ft_atoi(const char *str);
