@@ -20,6 +20,13 @@ typedef struct	s_list
 	ssize_t			content_size;
 	struct s_list	*next;
 }				t_list;
+typedef struct	s_list
+{
+	void			*content;
+	ssize_t			content_size;
+	int				fd;
+	struct s_list	*next;
+}				t_list_fd;
 int				ft_atoi(const char *str);
 size_t			ft_strlen(const char *s);
 char			*ft_strmap(char const *s, char (*f)(char));
@@ -86,5 +93,6 @@ void			ft_puttab(char **tab);
 void			ft_lstaddend(t_list **alst, t_list *new);
 char			*ft_strreversesplit(char **tab, char *separator);
 size_t			ft_chainlistlen(t_list *lst);
+t_list_fd	*ft_lstnew_fd(void const *content, size_t content_size, int fd);
 
 #endif

@@ -73,7 +73,8 @@ FILE = ft_atoi.c\
 	   ft_lstaddend.c\
 	   ft_strreversesplit.c\
 	   ft_puttab.c\
-	   ft_realloc.c
+	   ft_realloc.c\
+	   ft_lstnew_fd.c
 OBJ = $(FILE:.c=.o)
 FLAG = -Wextra -Werror -Wall
 
